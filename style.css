@@ -1,0 +1,89 @@
+html{
+    margin:0;
+    font-size:10px;
+    box-sizing:border-box;
+}
+
+body{
+    font-size:1.6rem;
+    margin:0;
+}
+
+.flex-container{
+    display:flex;
+    width:100vw;
+    height:100vh;
+}
+.desktop-video--left,
+.desktop-video--right,
+.tablet-video--left,
+.tablet-video--right,
+.mobile-video--left,
+.mobile-video--right{
+    display:none;
+} 
+
+.desktop-video--left {
+    width: 50%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+.desktop-video--right{
+    width:50%;
+    height:100%;
+    object-fit:cover;
+}
+
+.tablet-video--top {
+    width:100%%; 
+    height:33.33%;
+    object-fit:cover; 
+}
+
+.tablet-video--bottom{
+    width:100%;
+    height:33.33%;
+    object-fit:cover;
+}
+
+.mobile-video--top {
+    width:100%; 
+    height:30%;
+    object-fit: cover; 
+}
+
+.mobile-video--bottom{
+    width:100%;
+    height:70%;
+    object-fit:cover;
+}
+
+/*@media (media query) tells brower at a certain point do sth*/
+@media screen and (max-width:499px) { /*at 499px show these images*/
+    .mobile-video--top,
+    .mobile-video--bottom{
+        display:block;
+    }
+    .flex-container{
+        flex-direction:column; /*makes flex vertical so images appear top and bottom*/
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:949px) { /*at 500px start these commands*/
+    .tablet-video--top,
+    .tablet-video--bottom,{
+        display:block;
+    }
+    .flex-container{
+        flex-direction:column; /*makes flex vertical so videos appear top and bottom*/
+    }
+}
+
+@media screen and (min-width:950px) { /*at 500px show these images*/
+    .desktop-video--left,
+    .desktop-video--right{
+        display:block;
+    }
+    
+}
